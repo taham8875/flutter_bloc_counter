@@ -1,20 +1,10 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_counter/app.dart';
+import 'package:flutter_bloc_counter/counter_observer.dart';
 
 void main() {
-  runApp(const MainApp());
+  Bloc.observer = const CounterObserver(); 
+  runApp(const CounterApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
-}
